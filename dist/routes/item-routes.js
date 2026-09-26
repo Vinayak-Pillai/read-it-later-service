@@ -1,0 +1,11 @@
+import { Router } from "express";
+import { getItems, getItemById, createItem, updateItem, deleteItem, } from "../controllers/index.js";
+const itemRouter = Router();
+itemRouter.get("/", getItems);
+itemRouter.get("/:id", getItemById);
+itemRouter.post("/", createItem);
+itemRouter.patch("/:id", updateItem);
+itemRouter.put("/:id", updateItem);
+itemRouter.delete("/:id", deleteItem);
+export { itemRouter };
+export default itemRouter;

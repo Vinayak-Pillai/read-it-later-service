@@ -1,0 +1,17 @@
+import { Router } from "express";
+import { itemsController } from "./items.controller.js";
+
+const itemsRouter = Router();
+
+itemsRouter.get("/", itemsController.getItems);
+itemsRouter.get("/:id", itemsController.getItemById);
+itemsRouter.post("/", itemsController.createItem);
+itemsRouter.put("/:id", itemsController.updateItem);
+itemsRouter.patch("/:id", itemsController.updateItem);
+itemsRouter.patch("/:id/status", itemsController.updateItemStatus);
+itemsRouter.patch("/:id/archive", itemsController.archiveItem);
+itemsRouter.delete("/:id", itemsController.deleteItem);
+itemsRouter.delete("/:id/remove", itemsController.deleteItem);
+
+export { itemsRouter };
+export default itemsRouter;
